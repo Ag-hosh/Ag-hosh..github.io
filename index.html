@@ -1143,6 +1143,104 @@
             border-radius: 4px;
         }
 
+        .experience-highlights {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(245, 158, 11, 0.03);
+            border-left: 2px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .experience-highlights h5 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .experience-highlights ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .experience-highlights li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .experience-highlights li:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-highlights li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 0.8rem;
+        }
+
+        .experience-card.current .experience-highlights {
+            background: rgba(0, 255, 136, 0.03);
+            border-left-color: var(--accent-secondary);
+        }
+
+        .experience-card.current .experience-highlights h5 {
+            color: var(--accent-secondary);
+        }
+
+        .experience-card.current .experience-highlights li::before {
+            color: var(--accent-secondary);
+        }
+
+        .experience-location {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .experience-location i {
+            font-size: 0.65rem;
+            color: var(--accent);
+        }
+
+        .experience-card.current .experience-location i {
+            color: var(--accent-secondary);
+        }
+
+        .professor-link {
+            color: var(--accent);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .professor-link:hover {
+            color: var(--accent-secondary);
+            text-decoration: underline;
+        }
+
+        .experience-card.current .professor-link {
+            color: var(--accent-secondary);
+        }
+
+        .experience-card.current .professor-link:hover {
+            color: var(--accent);
+        }
+
         /* ═══════════════════════════════════════════════════════════════
            PROJECTS SECTION
         ═══════════════════════════════════════════════════════════════ */
@@ -1914,12 +2012,12 @@
             <a href="https://linkedin.com/in/aniketghosh-" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.codechef.com/users/a_ghosh" target="_blank" title="CodeChef"><i class="fas fa-code"></i></a>
             <a href="https://www.hackerrank.com/profile/aniket_ghosh" target="_blank" title="HackerRank"><i class="fab fa-hackerrank"></i></a>
-            <a href="mailto:ghosh.anik@northeastern.edu" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="/cdn-cgi/l/email-protection#f5929d9a869ddb949b9c9eb59b9a87819d9094868190879bdb909180" title="Email"><i class="fas fa-envelope"></i></a>
         </div>
 
         <!-- Fixed Email Sidebar - Right -->
         <div class="email-sidebar">
-            <a href="mailto:ghosh.anik@northeastern.edu">ghosh.anik@northeastern.edu</a>
+            <a href="/cdn-cgi/l/email-protection#fa9d92958992d49b949391ba9495888e929f9b898e9f8894d49f9e8f"><span class="__cf_email__" data-cfemail="1077787f63783e717e797b507e7f6264787571636475627e3e757465">[email&#160;protected]</span></a>
         </div>
         <!-- Navigation -->
         <nav id="navbar">
@@ -1973,7 +2071,7 @@
                 <i class="fas fa-robot"></i> Talk to My Digital Twin
             </a>
             <div class="mobile-email">
-                <span>ghosh.anik@northeastern.edu</span>
+                <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cbaca3a4b8a3e5aaa5a2a08ba5a4b9bfa3aeaab8bfaeb9a5e5aeafbe">[email&#160;protected]</a></span>
             </div>
             <div class="mobile-menu-social">
                 <a href="https://github.com/Itsme-aniketghosh" target="_blank"><i class="fab fa-github"></i></a>
@@ -2004,7 +2102,7 @@
                 </div>
                 <div class="hero-email">
                     <span>Email me at:</span>
-                    <a href="mailto:ghosh.anik@northeastern.edu">ghosh.anik@northeastern.edu</a>
+                    <a href="/cdn-cgi/l/email-protection#1d7a75726e75337c7374765d73726f6975787c6e69786f7333787968"><span class="__cf_email__" data-cfemail="7e1916110d16501f1017153e10110c0a161b1f0d0a1b0c10501b1a0b">[email&#160;protected]</span></a>
                     <button class="copy-btn" onclick="copyEmail()" title="Copy email">
                         <i class="fas fa-copy"></i>
                     </button>
@@ -2273,14 +2371,23 @@
                         <div>
                             <h3 class="experience-role">Teaching Assistant — NLP</h3>
                             <p class="experience-company">Northeastern University, Khoury College</p>
+                            <p class="experience-location"><i class="fas fa-map-marker-alt"></i> Boston, MA</p>
                         </div>
                         <span class="experience-duration">Fall 2025 – Present</span>
                     </div>
                     <p class="experience-description">
-                        Teaching PyTorch and ML/DL labs for Professor Amir Tahmasebi's graduate 
+                        Teaching PyTorch and ML/DL labs for <a href="https://www.linkedin.com/in/amirtahmasebi/" target="_blank" class="professor-link">Professor Amir Tahmasebi's</a> graduate 
                         NLP course. Helping students understand deep learning fundamentals, 
                         transformer architectures, and practical implementation skills. Also grading.
                     </p>
+                    <div class="experience-highlights">
+                        <h5><i class="fas fa-star"></i> Key Highlights</h5>
+                        <ul>
+                            <li>Teaching PyTorch fundamentals and neural network implementation</li>
+                            <li>Running hands-on ML/DL lab sessions</li>
+                            <li>Supporting graduate students with assignments and projects</li>
+                        </ul>
+                    </div>
                     <div class="experience-tags">
                         <span class="tag">PyTorch</span>
                         <span class="tag">NLP</span>
@@ -2294,16 +2401,26 @@
                         <div>
                             <h3 class="experience-role">Researcher & Research Mentor</h3>
                             <p class="experience-company">Jadavpur University</p>
+                            <p class="experience-location"><i class="fas fa-map-marker-alt"></i> Kolkata, India</p>
                         </div>
                         <span class="experience-duration">Mar 2024 – May 2025</span>
                     </div>
                     <p class="experience-description">
                         Developed custom ML pipelines for cell segmentation in histopathological 
-                        images under Dr. Kaushiki Roy and Dr. Debotosh Bhattacharjee. Implemented 
+                        images under Dr. Kaushiki Roy and <a href="https://www.linkedin.com/in/debotosh-bhattacharjee-80122b1b6/" target="_blank" class="professor-link">Dr. Debotosh Bhattacharjee</a>. Implemented 
                         preprocessing techniques using color quantization and DBSCAN clustering 
                         for densely packed cell detection. Guided junior researchers in deep learning 
                         for medical imaging.
                     </p>
+                    <div class="experience-highlights">
+                        <h5><i class="fas fa-star"></i> Key Highlights</h5>
+                        <ul>
+                            <li>Built ML pipelines combining classical CV and deep learning approaches</li>
+                            <li>Implemented color quantization and DBSCAN clustering for cell detection</li>
+                            <li>Guided junior researchers in deep learning for medical imaging</li>
+                            <li>Conducted literature review sessions for the research team</li>
+                        </ul>
+                    </div>
                     <div class="experience-tags">
                         <span class="tag">Medical Imaging</span>
                         <span class="tag">PyTorch</span>
@@ -2317,6 +2434,7 @@
                         <div>
                             <h3 class="experience-role">Research Intern</h3>
                             <p class="experience-company">North-Eastern Hill University (NEHU)</p>
+                            <p class="experience-location"><i class="fas fa-map-marker-alt"></i> Remote</p>
                         </div>
                         <span class="experience-duration">Feb 2023 – Jul 2023</span>
                     </div>
@@ -2326,6 +2444,14 @@
                         by analyzing existing datasets including Microsoft ASL, MNIST, and Static ISL 
                         to establish best practices.
                     </p>
+                    <div class="experience-highlights">
+                        <h5><i class="fas fa-star"></i> Key Highlights</h5>
+                        <ul>
+                            <li>Defined quality criteria and annotation standards for ISL dataset</li>
+                            <li>Analyzed Microsoft ASL, MNIST, Static ISL datasets</li>
+                            <li>Established best practices for data collection</li>
+                        </ul>
+                    </div>
                     <div class="experience-tags">
                         <span class="tag">Computer Vision</span>
                         <span class="tag">Dataset Development</span>
@@ -2339,6 +2465,7 @@
                         <div>
                             <h3 class="experience-role">Industrial Trainee</h3>
                             <p class="experience-company">Novotel Kolkata Hotel & Residences</p>
+                            <p class="experience-location"><i class="fas fa-map-marker-alt"></i> Kolkata, India</p>
                         </div>
                         <span class="experience-duration">Dec 2022 – Jan 2023</span>
                     </div>
@@ -2358,6 +2485,7 @@
                         <div>
                             <h3 class="experience-role">Volunteer Educator & Mentor</h3>
                             <p class="experience-company">The Hope Foundation</p>
+                            <p class="experience-location"><i class="fas fa-map-marker-alt"></i> Kolkata, India</p>
                         </div>
                         <span class="experience-duration">2006 – May 2025 (7 years active)</span>
                     </div>
@@ -2367,6 +2495,15 @@
                         lesson plans that broke complex topics into manageable concepts. 
                         Mentored students beyond academics.
                     </p>
+                    <div class="experience-highlights">
+                        <h5><i class="fas fa-star"></i> Key Highlights</h5>
+                        <ul>
+                            <li>7 years of active teaching to underprivileged students</li>
+                            <li>Developed custom learning materials for math and CS</li>
+                            <li>Created structured lesson plans for complex topics</li>
+                            <li>Provided mentorship beyond academic subjects</li>
+                        </ul>
+                    </div>
                     <div class="experience-tags">
                         <span class="tag">Teaching</span>
                         <span class="tag">Mentorship</span>
@@ -2746,7 +2883,7 @@
                 <div class="contact-email-box">
                     <p>Reach me directly at:</p>
                     <div class="email-copy-row">
-                        <a href="mailto:ghosh.anik@northeastern.edu">ghosh.anik@northeastern.edu</a>
+                        <a href="/cdn-cgi/l/email-protection#0d6a65627e65236c6364664d63627f7965686c7e79687f6323686978"><span class="__cf_email__" data-cfemail="4e2926213d26602f2027250e20213c3a262b2f3d3a2b3c20602b2a3b">[email&#160;protected]</span></a>
                         <button class="copy-btn" onclick="copyEmail()" title="Copy email">
                             <i class="fas fa-copy"></i>
                         </button>
@@ -2757,7 +2894,7 @@
                     <a href="https://linkedin.com/in/aniketghosh-" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     <a href="https://www.codechef.com/users/a_ghosh" target="_blank" title="CodeChef"><i class="fas fa-code"></i></a>
                     <a href="https://www.hackerrank.com/profile/aniket_ghosh" target="_blank" title="HackerRank"><i class="fab fa-hackerrank"></i></a>
-                    <a href="mailto:ghosh.anik@northeastern.edu" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="/cdn-cgi/l/email-protection#f196999e8299df909f989ab19f9e8385999490828594839fdf949584" title="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </section>
@@ -2768,7 +2905,7 @@
         <p>Designed & Built by Aniket Ghosh · 2026</p>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Copy email function
         function copyEmail() {
             const email = 'ghosh.anik@northeastern.edu';
@@ -3089,26 +3226,7 @@
             });
         });
 
-        // Active nav link highlighting
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-center a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (scrollY >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
+        //
     </script>
 </body>
 </html>
