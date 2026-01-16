@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aniket Ghosh | AI/ML Engineer & Researcher</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Crimson+Pro:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Crimson+Pro:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
@@ -47,16 +50,19 @@
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: var(--bg-secondary);
         }
+
         ::-webkit-scrollbar-thumb {
             background: var(--accent);
             border-radius: 4px;
         }
 
         /* Custom Cursor - Desktop Only */
-        .cursor, .cursor-follower {
+        .cursor,
+        .cursor-follower {
             display: none;
         }
 
@@ -64,9 +70,12 @@
             body.custom-cursor {
                 cursor: none;
             }
-            body.custom-cursor a, body.custom-cursor button {
+
+            body.custom-cursor a,
+            body.custom-cursor button {
                 cursor: none;
             }
+
             .cursor {
                 display: block;
                 width: 20px;
@@ -79,6 +88,7 @@
                 transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
                 box-shadow: 0 0 15px var(--accent), 0 0 30px var(--accent);
             }
+
             .cursor-follower {
                 display: block;
                 width: 40px;
@@ -91,6 +101,7 @@
                 z-index: 10000;
                 transition: transform 0.3s ease;
             }
+
             .cursor.hover {
                 width: 50px;
                 height: 50px;
@@ -120,9 +131,17 @@
             height: 100%;
         }
 
-        #gradient-canvas { opacity: 0.6; }
-        #particles-canvas { opacity: 0.8; }
-        #neural-canvas { opacity: 0.6; }
+        #gradient-canvas {
+            opacity: 0.6;
+        }
+
+        #particles-canvas {
+            opacity: 0.8;
+        }
+
+        #neural-canvas {
+            opacity: 0.6;
+        }
 
         /* Cosmic Orbs */
         .cosmic-orb {
@@ -164,14 +183,33 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(80px, -80px) rotate(120deg); }
-            66% { transform: translate(-80px, 80px) rotate(240deg); }
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            33% {
+                transform: translate(80px, -80px) rotate(120deg);
+            }
+
+            66% {
+                transform: translate(-80px, 80px) rotate(240deg);
+            }
         }
 
         @keyframes pulse-orb {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.7; }
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 0.7;
+            }
         }
 
         main {
@@ -205,20 +243,104 @@
         }
 
         .logo {
+            position: relative;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 700;
+            text-decoration: none;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            position: relative;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            animation: logo-rotate 8s linear infinite;
+        }
+
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            background: var(--bg-primary);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .logo-icon span {
+            position: relative;
+            z-index: 2;
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
             background: var(--gradient-1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-decoration: none;
-            letter-spacing: -1px;
-            transition: transform 0.3s ease;
         }
 
-        .logo:hover {
-            transform: scale(1.05);
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .logo-text .name {
+            font-size: 0.95rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--text-primary), var(--text-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-text .title {
+            font-size: 0.6rem;
+            font-weight: 500;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            opacity: 0.9;
+        }
+
+        .logo:hover .logo-icon::before {
+            animation-duration: 2s;
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        .logo:hover .logo-text .name {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        @keyframes logo-rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Pulse glow effect on the hexagon */
+        .logo-icon::before {
+            box-shadow: 0 0 0 rgba(245, 158, 11, 0);
+            transition: box-shadow 0.3s ease, animation-duration 0.3s ease;
         }
 
         .nav-center {
@@ -322,8 +444,13 @@
         }
 
         @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
         }
 
         .nav-ai-btn:hover {
@@ -337,8 +464,15 @@
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
         }
 
         /* Hamburger */
@@ -441,8 +575,16 @@
         }
 
         @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
         }
 
         .hero-description {
@@ -655,8 +797,17 @@
         }
 
         @keyframes pulse-dot {
-            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7); }
-            50% { opacity: 0.8; box-shadow: 0 0 0 10px rgba(0, 255, 136, 0); }
+
+            0%,
+            100% {
+                opacity: 1;
+                box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.7);
+            }
+
+            50% {
+                opacity: 0.8;
+                box-shadow: 0 0 0 10px rgba(0, 255, 136, 0);
+            }
         }
 
         /* Scroll indicator */
@@ -687,19 +838,44 @@
         }
 
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(8px); }
-            60% { transform: translateY(4px); }
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(8px);
+            }
+
+            60% {
+                transform: translateY(4px);
+            }
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         /* ═══════════════════════════════════════════════════════════════
@@ -730,8 +906,13 @@
         }
 
         @keyframes scan {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
         }
 
         .ai-cta-content {
@@ -1681,6 +1862,7 @@
             .skills-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
             .certifications-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -1981,6 +2163,7 @@
         }
 
         @media (max-width: 1024px) {
+
             .social-sidebar,
             .email-sidebar {
                 display: none;
@@ -1988,6 +2171,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Custom Cursor -->
     <div class="cursor" id="cursor"></div>
@@ -2008,10 +2192,14 @@
     <main>
         <!-- Fixed Social Sidebar - Left -->
         <div class="social-sidebar">
-            <a href="https://github.com/Itsme-aniketghosh" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/aniketghosh-" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.codechef.com/users/a_ghosh" target="_blank" title="CodeChef"><i class="fas fa-code"></i></a>
-            <a href="https://www.hackerrank.com/profile/aniket_ghosh" target="_blank" title="HackerRank"><i class="fab fa-hackerrank"></i></a>
+            <a href="https://github.com/Itsme-aniketghosh" target="_blank" title="GitHub"><i
+                    class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/aniketghosh-" target="_blank" title="LinkedIn"><i
+                    class="fab fa-linkedin"></i></a>
+            <a href="https://www.codechef.com/users/a_ghosh" target="_blank" title="CodeChef"><i
+                    class="fas fa-code"></i></a>
+            <a href="https://www.hackerrank.com/profile/aniket_ghosh" target="_blank" title="HackerRank"><i
+                    class="fab fa-hackerrank"></i></a>
             <a href="mailto:ghosh.ani@northeastern.edu" title="Email"><i class="fas fa-envelope"></i></a>
         </div>
 
@@ -2021,8 +2209,14 @@
         </div>
         <!-- Navigation -->
         <nav id="navbar">
-            <a href="#" class="logo">AG.</a>
-            
+            <a href="#hero" class="logo">
+                <div class="logo-icon"><span>AG</span></div>
+                <div class="logo-text">
+                    <span class="name">Aniket Ghosh</span>
+                    <span class="title">AI/ML Engineer</span>
+                </div>
+            </a>
+
             <ul class="nav-center">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -2035,8 +2229,10 @@
 
             <div class="nav-right">
                 <div class="nav-social">
-                    <a href="https://github.com/Itsme-aniketghosh" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/aniketghosh-" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Itsme-aniketghosh" target="_blank" title="GitHub"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/aniketghosh-" target="_blank" title="LinkedIn"><i
+                            class="fab fa-linkedin"></i></a>
                 </div>
                 <a href="resume.pdf" target="_blank" class="nav-resume-btn">
                     <i class="fas fa-file-alt"></i>
@@ -2081,14 +2277,14 @@
         </div>
 
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero" id="hero">
             <div class="hero-content">
                 <p class="hero-pretext">Hi, my name is</p>
                 <h1 class="hero-name">Aniket Ghosh.</h1>
                 <h2 class="hero-title"><span class="typewriter" id="typewriter"></span></h2>
                 <p class="hero-description">
-                    First-year grad student learning the ropes at Northeastern's Khoury College. 
-                    TAing NLP, sitting in on a PhD interpretability seminar, and spending 
+                    First-year grad student learning the ropes at Northeastern's Khoury College.
+                    TAing NLP, sitting in on a PhD interpretability seminar, and spending
                     too much time on side projects involving multi-agent systems.
                 </p>
                 <div class="hero-buttons">
@@ -2111,7 +2307,8 @@
             <div class="hero-image">
                 <div class="profile-container">
                     <div class="profile-image">
-                        <img src="profile.jpg" alt="Aniket Ghosh" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <img src="profile.jpg" alt="Aniket Ghosh"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <span class="profile-placeholder" style="display: none;">A</span>
                     </div>
                     <div class="profile-status">
@@ -2132,7 +2329,7 @@
                 <div class="ai-cta-text">
                     <h2><i class="fas fa-robot"></i> Talk to My Digital Twin</h2>
                     <p>
-                        Recruiters & collaborators: Skip reading and <strong>ask my AI anything</strong> about 
+                        Recruiters & collaborators: Skip reading and <strong>ask my AI anything</strong> about
                         my experience, projects, skills, or availability. It knows everything about me.
                     </p>
                 </div>
@@ -2151,28 +2348,28 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        My path into AI started with contrasts. Growing up, I traveled with 
-                        my father — an SAP consultant at IBM — through cities like Chicago, 
-                        Bonn, and Zurich. At the same time, I spent seven years teaching 
-                        mathematics and computer science to underprivileged students through 
-                        The Hope Foundation. That gap between what technology could do and 
-                        who it actually reached became the question I've been trying to 
+                        My path into AI started with contrasts. Growing up, I traveled with
+                        my father — an SAP consultant at IBM — through cities like Chicago,
+                        Bonn, and Zurich. At the same time, I spent seven years teaching
+                        mathematics and computer science to underprivileged students through
+                        The Hope Foundation. That gap between what technology could do and
+                        who it actually reached became the question I've been trying to
                         answer ever since.
                     </p>
                     <p>
-                        I graduated with a B.Tech in Computer Science & Business Systems from 
-                        the Institute of Engineering & Management, Kolkata — ranking 2nd in a 
-                        department of 180+ students with a 4/4 GPA and receiving the 
-                        Director's Award. In Fall 2025, I joined Northeastern University's 
-                        Khoury College for my MS in Artificial Intelligence with a 15% merit 
+                        I graduated with a B.Tech in Computer Science & Business Systems from
+                        the Institute of Engineering & Management, Kolkata — ranking 2nd in a
+                        department of 180+ students with a 4/4 GPA and receiving the
+                        Director's Award. In Fall 2025, I joined Northeastern University's
+                        Khoury College for my MS in Artificial Intelligence with a 15% merit
                         scholarship, focusing on the Machine Learning concentration.
                     </p>
                     <p>
-                        Currently, I'm a Teaching Assistant for the graduate NLP course under 
-                        Professor Amir Tahmasebi, where I teach PyTorch and ML/DL labs. My 
-                        coursework spans Foundations of AI, Algorithms, Interpretable AI, and 
-                        Applied Programming for AI. Outside class, I'm deep into multi-agent 
-                        systems — building autonomous trading simulations and benchmarking 
+                        Currently, I'm a Teaching Assistant for the graduate NLP course under
+                        Professor Amir Tahmasebi, where I teach PyTorch and ML/DL labs. My
+                        coursework spans Foundations of AI, Algorithms, Interpretable AI, and
+                        Applied Programming for AI. Outside class, I'm deep into multi-agent
+                        systems — building autonomous trading simulations and benchmarking
                         link prediction methods on biomedical knowledge graphs.
                     </p>
                 </div>
@@ -2235,11 +2432,16 @@
                         <h4>Programming Languages</h4>
                     </div>
                     <div class="skill-items">
-                        <div class="skill-row"><span class="skill-name">Python</span><span class="skill-level">95%</span></div>
-                        <div class="skill-row"><span class="skill-name">C / C++</span><span class="skill-level">85%</span></div>
-                        <div class="skill-row"><span class="skill-name">Java</span><span class="skill-level">80%</span></div>
-                        <div class="skill-row"><span class="skill-name">SQL</span><span class="skill-level">85%</span></div>
-                        <div class="skill-row"><span class="skill-name">JavaScript</span><span class="skill-level">75%</span></div>
+                        <div class="skill-row"><span class="skill-name">Python</span><span
+                                class="skill-level">95%</span></div>
+                        <div class="skill-row"><span class="skill-name">C / C++</span><span
+                                class="skill-level">85%</span></div>
+                        <div class="skill-row"><span class="skill-name">Java</span><span class="skill-level">80%</span>
+                        </div>
+                        <div class="skill-row"><span class="skill-name">SQL</span><span class="skill-level">85%</span>
+                        </div>
+                        <div class="skill-row"><span class="skill-name">JavaScript</span><span
+                                class="skill-level">75%</span></div>
                     </div>
                     <div class="tech-grid">
                         <span class="tech-tag">HTML/CSS</span>
@@ -2254,10 +2456,14 @@
                         <h4>LLM & Generative AI</h4>
                     </div>
                     <div class="skill-items">
-                        <div class="skill-row"><span class="skill-name">RAG & Vector DBs</span><span class="skill-level">90%</span></div>
-                        <div class="skill-row"><span class="skill-name">OpenAI / Anthropic APIs</span><span class="skill-level">90%</span></div>
-                        <div class="skill-row"><span class="skill-name">Hugging Face</span><span class="skill-level">85%</span></div>
-                        <div class="skill-row"><span class="skill-name">LoRA/QLoRA Fine-tuning</span><span class="skill-level">75%</span></div>
+                        <div class="skill-row"><span class="skill-name">RAG & Vector DBs</span><span
+                                class="skill-level">90%</span></div>
+                        <div class="skill-row"><span class="skill-name">OpenAI / Anthropic APIs</span><span
+                                class="skill-level">90%</span></div>
+                        <div class="skill-row"><span class="skill-name">Hugging Face</span><span
+                                class="skill-level">85%</span></div>
+                        <div class="skill-row"><span class="skill-name">LoRA/QLoRA Fine-tuning</span><span
+                                class="skill-level">75%</span></div>
                     </div>
                     <div class="tech-grid">
                         <span class="tech-tag">Prompt Engineering</span>
@@ -2275,10 +2481,14 @@
                         <h4>AI Agents & Orchestration</h4>
                     </div>
                     <div class="skill-items">
-                        <div class="skill-row"><span class="skill-name">OpenAI Agents SDK</span><span class="skill-level">90%</span></div>
-                        <div class="skill-row"><span class="skill-name">CrewAI</span><span class="skill-level">90%</span></div>
-                        <div class="skill-row"><span class="skill-name">Model Context Protocol</span><span class="skill-level">85%</span></div>
-                        <div class="skill-row"><span class="skill-name">LangChain / LangGraph</span><span class="skill-level">85%</span></div>
+                        <div class="skill-row"><span class="skill-name">OpenAI Agents SDK</span><span
+                                class="skill-level">90%</span></div>
+                        <div class="skill-row"><span class="skill-name">CrewAI</span><span
+                                class="skill-level">90%</span></div>
+                        <div class="skill-row"><span class="skill-name">Model Context Protocol</span><span
+                                class="skill-level">85%</span></div>
+                        <div class="skill-row"><span class="skill-name">LangChain / LangGraph</span><span
+                                class="skill-level">85%</span></div>
                     </div>
                     <div class="tech-grid">
                         <span class="tech-tag">AutoGen</span>
@@ -2294,10 +2504,14 @@
                         <h4>ML Frameworks</h4>
                     </div>
                     <div class="skill-items">
-                        <div class="skill-row"><span class="skill-name">PyTorch</span><span class="skill-level">95%</span></div>
-                        <div class="skill-row"><span class="skill-name">TensorFlow / Keras</span><span class="skill-level">90%</span></div>
-                        <div class="skill-row"><span class="skill-name">scikit-learn</span><span class="skill-level">90%</span></div>
-                        <div class="skill-row"><span class="skill-name">YOLOv8 & CNNs</span><span class="skill-level">90%</span></div>
+                        <div class="skill-row"><span class="skill-name">PyTorch</span><span
+                                class="skill-level">95%</span></div>
+                        <div class="skill-row"><span class="skill-name">TensorFlow / Keras</span><span
+                                class="skill-level">90%</span></div>
+                        <div class="skill-row"><span class="skill-name">scikit-learn</span><span
+                                class="skill-level">90%</span></div>
+                        <div class="skill-row"><span class="skill-name">YOLOv8 & CNNs</span><span
+                                class="skill-level">90%</span></div>
                     </div>
                     <div class="tech-grid">
                         <span class="tech-tag">Transformers</span>
@@ -2314,10 +2528,14 @@
                         <h4>MLOps & Cloud</h4>
                     </div>
                     <div class="skill-items">
-                        <div class="skill-row"><span class="skill-name">Docker</span><span class="skill-level">85%</span></div>
-                        <div class="skill-row"><span class="skill-name">AWS (Bedrock, SageMaker)</span><span class="skill-level">80%</span></div>
-                        <div class="skill-row"><span class="skill-name">GitHub Actions</span><span class="skill-level">80%</span></div>
-                        <div class="skill-row"><span class="skill-name">Terraform</span><span class="skill-level">75%</span></div>
+                        <div class="skill-row"><span class="skill-name">Docker</span><span
+                                class="skill-level">85%</span></div>
+                        <div class="skill-row"><span class="skill-name">AWS (Bedrock, SageMaker)</span><span
+                                class="skill-level">80%</span></div>
+                        <div class="skill-row"><span class="skill-name">GitHub Actions</span><span
+                                class="skill-level">80%</span></div>
+                        <div class="skill-row"><span class="skill-name">Terraform</span><span
+                                class="skill-level">75%</span></div>
                     </div>
                     <div class="tech-grid">
                         <span class="tech-tag">Azure</span>
@@ -2340,10 +2558,14 @@
                         <h4>Specializations</h4>
                     </div>
                     <div class="skill-items">
-                        <div class="skill-row"><span class="skill-name">Computer Vision</span><span class="skill-level">90%</span></div>
-                        <div class="skill-row"><span class="skill-name">Deep Learning</span><span class="skill-level">90%</span></div>
-                        <div class="skill-row"><span class="skill-name">NLP</span><span class="skill-level">85%</span></div>
-                        <div class="skill-row"><span class="skill-name">Medical Image Analysis</span><span class="skill-level">85%</span></div>
+                        <div class="skill-row"><span class="skill-name">Computer Vision</span><span
+                                class="skill-level">90%</span></div>
+                        <div class="skill-row"><span class="skill-name">Deep Learning</span><span
+                                class="skill-level">90%</span></div>
+                        <div class="skill-row"><span class="skill-name">NLP</span><span class="skill-level">85%</span>
+                        </div>
+                        <div class="skill-row"><span class="skill-name">Medical Image Analysis</span><span
+                                class="skill-level">85%</span></div>
                     </div>
                     <div class="tech-grid">
                         <span class="tech-tag">Explainable AI</span>
@@ -2376,8 +2598,9 @@
                         <span class="experience-duration">Fall 2025 – Present</span>
                     </div>
                     <p class="experience-description">
-                        Teaching PyTorch and ML/DL labs for <a href="https://www.linkedin.com/in/amirtahmasebi/" target="_blank" class="professor-link">Professor Amir Tahmasebi's</a> graduate 
-                        NLP course. Helping students understand deep learning fundamentals, 
+                        Teaching PyTorch and ML/DL labs for <a href="https://www.linkedin.com/in/amirtahmasebi/"
+                            target="_blank" class="professor-link">Professor Amir Tahmasebi's</a> graduate
+                        NLP course. Helping students understand deep learning fundamentals,
                         transformer architectures, and practical implementation skills. Also grading.
                     </p>
                     <div class="experience-highlights">
@@ -2406,10 +2629,12 @@
                         <span class="experience-duration">Mar 2024 – May 2025</span>
                     </div>
                     <p class="experience-description">
-                        Developed custom ML pipelines for cell segmentation in histopathological 
-                        images under Dr. Kaushiki Roy and <a href="https://www.linkedin.com/in/debotosh-bhattacharjee-80122b1b6/" target="_blank" class="professor-link">Dr. Debotosh Bhattacharjee</a>. Implemented 
-                        preprocessing techniques using color quantization and DBSCAN clustering 
-                        for densely packed cell detection. Guided junior researchers in deep learning 
+                        Developed custom ML pipelines for cell segmentation in histopathological
+                        images under Dr. Kaushiki Roy and <a
+                            href="https://www.linkedin.com/in/debotosh-bhattacharjee-80122b1b6/" target="_blank"
+                            class="professor-link">Dr. Debotosh Bhattacharjee</a>. Implemented
+                        preprocessing techniques using color quantization and DBSCAN clustering
+                        for densely packed cell detection. Guided junior researchers in deep learning
                         for medical imaging.
                     </p>
                     <div class="experience-highlights">
@@ -2439,9 +2664,9 @@
                         <span class="experience-duration">Feb 2023 – Jul 2023</span>
                     </div>
                     <p class="experience-description">
-                        Contributed to developing an Indian Sign Language dataset under 
-                        Dr. Arnab Kumar Maji. Defined quality criteria and annotation standards 
-                        by analyzing existing datasets including Microsoft ASL, MNIST, and Static ISL 
+                        Contributed to developing an Indian Sign Language dataset under
+                        Dr. Arnab Kumar Maji. Defined quality criteria and annotation standards
+                        by analyzing existing datasets including Microsoft ASL, MNIST, and Static ISL
                         to establish best practices.
                     </p>
                     <div class="experience-highlights">
@@ -2470,7 +2695,7 @@
                         <span class="experience-duration">Dec 2022 – Jan 2023</span>
                     </div>
                     <p class="experience-description">
-                        Facilitated IT system migration from local servers to Oracle cloud 
+                        Facilitated IT system migration from local servers to Oracle cloud
                         infrastructure. Supported IT operations for 1000+ room property.
                     </p>
                     <div class="experience-tags">
@@ -2490,9 +2715,9 @@
                         <span class="experience-duration">2006 – May 2025 (7 years active)</span>
                     </div>
                     <p class="experience-description">
-                        Taught mathematics and computer science to 10 underprivileged students 
-                        over seven years. Developed custom learning materials and structured 
-                        lesson plans that broke complex topics into manageable concepts. 
+                        Taught mathematics and computer science to 10 underprivileged students
+                        over seven years. Developed custom learning materials and structured
+                        lesson plans that broke complex topics into manageable concepts.
                         Mentored students beyond academics.
                     </p>
                     <div class="experience-highlights">
@@ -2527,23 +2752,25 @@
                         <div class="project-header">
                             <i class="fas fa-robot project-icon"></i>
                             <div class="project-links">
-                                <a href="https://github.com/Itsme-aniketghosh/LLM-my-digital-twin" target="_blank"><i class="fab fa-github"></i></a>
-                                <a href="https://ag-hosh-my-digital-twin.hf.space/" target="_blank" class="demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="https://github.com/Itsme-aniketghosh/LLM-my-digital-twin" target="_blank"><i
+                                        class="fab fa-github"></i></a>
+                                <a href="https://ag-hosh-my-digital-twin.hf.space/" target="_blank" class="demo-link"><i
+                                        class="fas fa-external-link-alt"></i> Live Demo</a>
                             </div>
                         </div>
                         <h3 class="project-title">RAG-based Digital Twin</h3>
                         <p class="project-context">🤖 Recruiters: Ask Me Anything! · Live on HuggingFace</p>
                         <p class="project-description">
-                            Production RAG system that answers questions about me in real-time. 
-                            Ask about my experience, skills, projects, or availability — it knows 
+                            Production RAG system that answers questions about me in real-time.
+                            Ask about my experience, skills, projects, or availability — it knows
                             everything and responds instantly.
                         </p>
                     </div>
                     <div>
                         <p class="project-description">
-                            Built with FAISS vector store, all-MiniLM-L6-v2 embeddings, and 
-                            Llama 3.1 8B Instruct. Features sub-millisecond retrieval with 
-                            2-5s end-to-end latency. 600-word chunks with 200-word overlap 
+                            Built with FAISS vector store, all-MiniLM-L6-v2 embeddings, and
+                            Llama 3.1 8B Instruct. Features sub-millisecond retrieval with
+                            2-5s end-to-end latency. 600-word chunks with 200-word overlap
                             for optimal context.
                         </p>
                         <div class="experience-tags">
@@ -2563,21 +2790,22 @@
                         <div class="project-header">
                             <i class="fas fa-chart-line project-icon"></i>
                             <div class="project-links">
-                                <a href="https://github.com/Itsme-aniketghosh/autonomous-traders-mcp" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="https://github.com/Itsme-aniketghosh/autonomous-traders-mcp" target="_blank"><i
+                                        class="fab fa-github"></i></a>
                             </div>
                         </div>
                         <h3 class="project-title">Autonomous Multi-Agent Trading Simulation</h3>
                         <p class="project-context">Multi-Agent Systems · Model Context Protocol</p>
                         <p class="project-description">
-                            Sophisticated equity trading simulation featuring 4 autonomous AI traders 
-                            (Warren, George, Ray, Cathie) making real investment decisions based on 
+                            Sophisticated equity trading simulation featuring 4 autonomous AI traders
+                            (Warren, George, Ray, Cathie) making real investment decisions based on
                             distinct philosophies.
                         </p>
                     </div>
                     <div>
                         <p class="project-description">
-                            Built with 6 MCP servers providing 44 integrated tools, OpenAI Agents SDK 
-                            for orchestration, and a Gradio dashboard for real-time monitoring. 
+                            Built with 6 MCP servers providing 44 integrated tools, OpenAI Agents SDK
+                            for orchestration, and a Gradio dashboard for real-time monitoring.
                             Each trader manages $10,000 portfolios with Polygon.io market data.
                         </p>
                         <div class="experience-tags">
@@ -2586,7 +2814,8 @@
                             <span class="tag">Multi-Agent</span>
                             <span class="tag">Gradio</span>
                         </div>
-                        <p class="project-metrics"><span>4 agents</span> · <span>6 MCP servers</span> · <span>44 tools</span></p>
+                        <p class="project-metrics"><span>4 agents</span> · <span>6 MCP servers</span> · <span>44
+                                tools</span></p>
                     </div>
                 </div>
 
@@ -2595,14 +2824,15 @@
                     <div class="project-header">
                         <i class="fas fa-dna project-icon"></i>
                         <div class="project-links">
-                            <a href="https://github.com/Itsme-aniketghosh/biomedical-link-prediction" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://github.com/Itsme-aniketghosh/biomedical-link-prediction" target="_blank"><i
+                                    class="fab fa-github"></i></a>
                         </div>
                     </div>
                     <h3 class="project-title">Biomedical Knowledge Graph Link Prediction</h3>
                     <p class="project-context">CS 5100 · Foundations of AI · Prof. Tahmasebi</p>
                     <p class="project-description">
-                        Comparative study on BioRED knowledge graph. Discovered that classical ML 
-                        (Random Forest: 0.94 AUC) dramatically outperforms state-of-the-art embeddings 
+                        Comparative study on BioRED knowledge graph. Discovered that classical ML
+                        (Random Forest: 0.94 AUC) dramatically outperforms state-of-the-art embeddings
                         (TransE: 0.61 AUC) on sparse biomedical data. Multi-hop reasoning for explainability.
                     </p>
                     <div class="experience-tags">
@@ -2619,14 +2849,15 @@
                     <div class="project-header">
                         <i class="fas fa-users-cog project-icon"></i>
                         <div class="project-links">
-                            <a href="https://github.com/Itsme-aniketghosh/crewai" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://github.com/Itsme-aniketghosh/crewai" target="_blank"><i
+                                    class="fab fa-github"></i></a>
                         </div>
                     </div>
                     <h3 class="project-title">CrewAI Multi-Agent Collection</h3>
                     <p class="project-context">5 Complete Multi-Agent Projects</p>
                     <p class="project-description">
-                        Engineering Team (4 agents), Stock Picker with hierarchical memory, 
-                        Multi-LLM Debate (GPT-4o vs Claude), Financial Researcher, and 
+                        Engineering Team (4 agents), Stock Picker with hierarchical memory,
+                        Multi-LLM Debate (GPT-4o vs Claude), Financial Researcher, and
                         Docker-based safe code execution.
                     </p>
                     <div class="experience-tags">
@@ -2643,14 +2874,15 @@
                     <div class="project-header">
                         <i class="fas fa-shield-virus project-icon"></i>
                         <div class="project-links">
-                            <a href="https://github.com/Itsme-aniketghosh/LLM-Cybersecurity-Analyzer" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://github.com/Itsme-aniketghosh/LLM-Cybersecurity-Analyzer" target="_blank"><i
+                                    class="fab fa-github"></i></a>
                         </div>
                     </div>
                     <h3 class="project-title">AI-Powered Code Security Analyzer</h3>
                     <p class="project-context">Ed Donner's "AI in Production" Course</p>
                     <p class="project-description">
-                        Full-stack vulnerability detection combining OpenAI Agents SDK with Semgrep. 
-                        Next.js frontend, FastAPI backend, deployed on Azure Container Apps + GCP 
+                        Full-stack vulnerability detection combining OpenAI Agents SDK with Semgrep.
+                        Next.js frontend, FastAPI backend, deployed on Azure Container Apps + GCP
                         Cloud Run with Terraform IaC.
                     </p>
                     <div class="experience-tags">
@@ -2668,15 +2900,17 @@
                     <div class="project-header">
                         <i class="fas fa-search project-icon"></i>
                         <div class="project-links">
-                            <a href="https://github.com/Itsme-aniketghosh/LLM-Deep-Research" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://ag-hosh-deepresearch.hf.space/" target="_blank" class="demo-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            <a href="https://github.com/Itsme-aniketghosh/LLM-Deep-Research" target="_blank"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="https://ag-hosh-deepresearch.hf.space/" target="_blank" class="demo-link"><i
+                                    class="fas fa-external-link-alt"></i> Demo</a>
                         </div>
                     </div>
                     <h3 class="project-title">AI Research Assistant</h3>
                     <p class="project-context">Live on HuggingFace · Real-time Streaming</p>
                     <p class="project-description">
-                        Autonomous research system with multi-agent pipeline: Planner generates 3-7 queries, 
-                        parallel researchers extract hooks/facts/insights, and Writer synthesizes 
+                        Autonomous research system with multi-agent pipeline: Planner generates 3-7 queries,
+                        parallel researchers extract hooks/facts/insights, and Writer synthesizes
                         journalistic output.
                     </p>
                     <div class="experience-tags">
@@ -2702,8 +2936,8 @@
                     <div>
                         <h3 class="research-title">Intelligent Traffic Sign Detection System</h3>
                         <p class="research-description">
-                            Integrated YOLOv8 with a custom CNN filtering layer to minimize false 
-                            positives in cluttered Indian driving environments. Published in Springer's 
+                            Integrated YOLOv8 with a custom CNN filtering layer to minimize false
+                            positives in cluttered Indian driving environments. Published in Springer's
                             "Information and Communication Technologies" series at AISC 2024.
                         </p>
                         <div class="experience-tags" style="margin-top: 1rem;">
@@ -2721,8 +2955,8 @@
                     <div>
                         <h3 class="research-title">ML Pipeline for Histopathological Cell Segmentation</h3>
                         <p class="research-description">
-                            Designed custom ML pipeline combining classical computer vision and deep 
-                            learning approaches under Dr. Kaushiki Roy at Jadavpur University. 
+                            Designed custom ML pipeline combining classical computer vision and deep
+                            learning approaches under Dr. Kaushiki Roy at Jadavpur University.
                             Implemented DBSCAN clustering for detecting densely packed cellular structures.
                         </p>
                         <div class="experience-tags" style="margin-top: 1rem;">
@@ -2740,8 +2974,8 @@
                     <div>
                         <h3 class="research-title">Hybrid Network Intrusion Detection System</h3>
                         <p class="research-description">
-                            Designing a network-wide behavioral analysis approach that detects 
-                            coordinated threats invisible to traditional node-by-node inspection. 
+                            Designing a network-wide behavioral analysis approach that detects
+                            coordinated threats invisible to traditional node-by-node inspection.
                             Developing a hybrid deep learning approach for enhanced threat detection.
                         </p>
                         <div class="experience-tags" style="margin-top: 1rem;">
@@ -2769,10 +3003,12 @@
                         <h4>Deep Learning & AI</h4>
                     </div>
                     <div class="cert-list">
-                        <a href="https://www.udemy.com/certificate/UC-17f58812-6746-49db-9f1b-55288d0f4cc8/" target="_blank" class="cert-item">
+                        <a href="https://www.udemy.com/certificate/UC-17f58812-6746-49db-9f1b-55288d0f4cc8/"
+                            target="_blank" class="cert-item">
                             <i class="fas fa-certificate"></i> Deep Learning A-Z 2024
                         </a>
-                        <a href="https://www.udemy.com/certificate/UC-82fb2982-1ef2-4612-8dce-85c6247f18d7/" target="_blank" class="cert-item">
+                        <a href="https://www.udemy.com/certificate/UC-82fb2982-1ef2-4612-8dce-85c6247f18d7/"
+                            target="_blank" class="cert-item">
                             <i class="fas fa-certificate"></i> Machine Learning: NLP in Python V2
                         </a>
                     </div>
@@ -2784,7 +3020,8 @@
                         <h4>ML Frameworks & Data Science</h4>
                     </div>
                     <div class="cert-list">
-                        <a href="https://www.udemy.com/certificate/UC-057b3f62-2d2f-4ac8-88b7-4bb3ac32099e/" target="_blank" class="cert-item">
+                        <a href="https://www.udemy.com/certificate/UC-057b3f62-2d2f-4ac8-88b7-4bb3ac32099e/"
+                            target="_blank" class="cert-item">
                             <i class="fas fa-certificate"></i> Python for ML & Data Science Masterclass
                         </a>
                     </div>
@@ -2796,13 +3033,16 @@
                         <h4>LLM & GenAI Engineering</h4>
                     </div>
                     <div class="cert-list">
-                        <a href="https://www.udemy.com/certificate/UC-6da190e8-0ec9-4582-b1f9-a3d6e7ef9fd0/" target="_blank" class="cert-item">
+                        <a href="https://www.udemy.com/certificate/UC-6da190e8-0ec9-4582-b1f9-a3d6e7ef9fd0/"
+                            target="_blank" class="cert-item">
                             <i class="fas fa-certificate"></i> AI Engineer Core Track
                         </a>
-                        <a href="https://www.udemy.com/certificate/UC-a96b7f21-f370-4bf6-b298-68afbf573acb/" target="_blank" class="cert-item">
+                        <a href="https://www.udemy.com/certificate/UC-a96b7f21-f370-4bf6-b298-68afbf573acb/"
+                            target="_blank" class="cert-item">
                             <i class="fas fa-certificate"></i> AI Engineer Agentic Track
                         </a>
-                        <a href="https://www.udemy.com/course/generative-and-agentic-ai-in-production/" target="_blank" class="cert-item">
+                        <a href="https://www.udemy.com/course/generative-and-agentic-ai-in-production/" target="_blank"
+                            class="cert-item">
                             <i class="fas fa-certificate"></i> MLOps: Deploy to AWS/Azure/GCP
                         </a>
                     </div>
@@ -2814,10 +3054,12 @@
                         <h4>Programming & Algorithms</h4>
                     </div>
                     <div class="cert-list">
-                        <a href="https://www.udemy.com/certificate/UC-d732f376-d464-4c4e-85cc-fcf11e7216f8/" target="_blank" class="cert-item">
+                        <a href="https://www.udemy.com/certificate/UC-d732f376-d464-4c4e-85cc-fcf11e7216f8/"
+                            target="_blank" class="cert-item">
                             <i class="fas fa-certificate"></i> Data Structures & Algorithms C++
                         </a>
-                        <a href="https://www.udemy.com/certificate/UC-fedcd3f8-b13a-4412-acaf-4c56a217f4fe/" target="_blank" class="cert-item">
+                        <a href="https://www.udemy.com/certificate/UC-fedcd3f8-b13a-4412-acaf-4c56a217f4fe/"
+                            target="_blank" class="cert-item">
                             <i class="fas fa-certificate"></i> C++ Programming
                         </a>
                     </div>
@@ -2829,10 +3071,12 @@
                         <h4>Specialized Skills</h4>
                     </div>
                     <div class="cert-list">
-                        <a href="https://www.udemy.com/certificate/UC-7a1d8574-7ee2-4c0a-9ed7-6b2b6e157270/" target="_blank" class="cert-item">
+                        <a href="https://www.udemy.com/certificate/UC-7a1d8574-7ee2-4c0a-9ed7-6b2b6e157270/"
+                            target="_blank" class="cert-item">
                             <i class="fas fa-certificate"></i> High-Performance Computing Python 3x
                         </a>
-                        <a href="https://www.udemy.com/certificate/UC-49132f6d-e26a-4b6c-b43b-9e0d57b234b2/" target="_blank" class="cert-item">
+                        <a href="https://www.udemy.com/certificate/UC-49132f6d-e26a-4b6c-b43b-9e0d57b234b2/"
+                            target="_blank" class="cert-item">
                             <i class="fas fa-certificate"></i> Investing in Stocks Complete Course
                         </a>
                     </div>
@@ -2864,16 +3108,17 @@
             <div class="contact-content">
                 <h2 class="contact-title">Let's Connect</h2>
                 <p class="contact-description">
-                    I'm currently pursuing my MS in AI at Northeastern University 
-                    (graduating May 2027) while TAing the graduate NLP course. I'm 
-                    actively seeking <strong>Summer 2026 internships</strong> in ML Engineering, 
+                    I'm currently pursuing my MS in AI at Northeastern University
+                    (graduating May 2027) while TAing the graduate NLP course. I'm
+                    actively seeking <strong>Summer 2026 internships</strong> in ML Engineering,
                     AI Research, or Applied AI roles.
                     <br><br>
-                    Whether you have an opportunity, a research collaboration idea, 
+                    Whether you have an opportunity, a research collaboration idea,
                     or just want to chat about multi-agent systems — my inbox is always open.
                 </p>
                 <div class="contact-buttons">
-                    <a href="https://ag-hosh-my-digital-twin.hf.space/" target="_blank" class="contact-btn contact-btn-ai">
+                    <a href="https://ag-hosh-my-digital-twin.hf.space/" target="_blank"
+                        class="contact-btn contact-btn-ai">
                         <i class="fas fa-robot"></i> Talk to My Digital Twin
                     </a>
                     <a href="resume.pdf" target="_blank" class="contact-btn">
@@ -2890,10 +3135,14 @@
                     </div>
                 </div>
                 <div class="contact-links">
-                    <a href="https://github.com/Itsme-aniketghosh" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/aniketghosh-" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.codechef.com/users/a_ghosh" target="_blank" title="CodeChef"><i class="fas fa-code"></i></a>
-                    <a href="https://www.hackerrank.com/profile/aniket_ghosh" target="_blank" title="HackerRank"><i class="fab fa-hackerrank"></i></a>
+                    <a href="https://github.com/Itsme-aniketghosh" target="_blank" title="GitHub"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/aniketghosh-" target="_blank" title="LinkedIn"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://www.codechef.com/users/a_ghosh" target="_blank" title="CodeChef"><i
+                            class="fas fa-code"></i></a>
+                    <a href="https://www.hackerrank.com/profile/aniket_ghosh" target="_blank" title="HackerRank"><i
+                            class="fab fa-hackerrank"></i></a>
                     <a href="mailto:ghosh.ani@northeastern.edu" title="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
@@ -2928,11 +3177,11 @@
 
         if (window.matchMedia('(min-width: 1024px) and (pointer: fine)').matches) {
             document.body.classList.add('custom-cursor');
-            
+
             document.addEventListener('mousemove', (e) => {
                 cursor.style.left = e.clientX + 'px';
                 cursor.style.top = e.clientY + 'px';
-                
+
                 setTimeout(() => {
                     cursorFollower.style.left = e.clientX + 'px';
                     cursorFollower.style.top = e.clientY + 'px';
@@ -2969,7 +3218,7 @@
             gradientAngle += 0.002;
             const centerX = gradientCanvas.width / 2;
             const centerY = gradientCanvas.height / 2;
-            
+
             const gradient = gradientCtx.createRadialGradient(
                 centerX + Math.cos(gradientAngle) * 200,
                 centerY + Math.sin(gradientAngle) * 200,
@@ -2978,12 +3227,12 @@
                 centerY,
                 Math.max(gradientCanvas.width, gradientCanvas.height)
             );
-            
+
             gradient.addColorStop(0, 'rgba(245, 158, 11, 0.15)');
             gradient.addColorStop(0.3, 'rgba(0, 255, 136, 0.08)');
             gradient.addColorStop(0.6, 'rgba(0, 170, 255, 0.1)');
             gradient.addColorStop(1, 'rgba(10, 10, 11, 0)');
-            
+
             gradientCtx.clearRect(0, 0, gradientCanvas.width, gradientCanvas.height);
             gradientCtx.fillStyle = gradient;
             gradientCtx.fillRect(0, 0, gradientCanvas.width, gradientCanvas.height);
@@ -2994,7 +3243,7 @@
             constructor() {
                 this.reset();
             }
-            
+
             reset() {
                 this.x = Math.random() * particlesCanvas.width;
                 this.y = Math.random() * particlesCanvas.height;
@@ -3004,22 +3253,22 @@
                 this.speedY = (Math.random() - 0.5) * 0.3;
                 this.speedZ = Math.random() * 1.5 + 0.5;
             }
-            
+
             update() {
                 this.x += this.speedX;
                 this.y += this.speedY;
                 this.z -= this.speedZ;
-                
+
                 if (this.z < 1) this.reset();
                 if (this.x < 0 || this.x > particlesCanvas.width) this.speedX *= -1;
                 if (this.y < 0 || this.y > particlesCanvas.height) this.speedY *= -1;
-                
+
                 const scale = 1000 / (1000 + this.z);
                 this.screenX = (this.x - particlesCanvas.width / 2) * scale + particlesCanvas.width / 2;
                 this.screenY = (this.y - particlesCanvas.height / 2) * scale + particlesCanvas.height / 2;
                 this.screenSize = this.size * scale;
             }
-            
+
             draw() {
                 const opacity = 1 - this.z / 1000;
                 particlesCtx.beginPath();
@@ -3042,15 +3291,15 @@
                 this.pulsePhase = Math.random() * Math.PI * 2;
                 this.active = Math.random() > 0.7;
             }
-            
+
             update() {
                 this.x += this.vx;
                 this.y += this.vy;
                 this.pulsePhase += 0.03;
-                
+
                 if (this.x < 0 || this.x > neuralCanvas.width) this.vx *= -1;
                 if (this.y < 0 || this.y > neuralCanvas.height) this.vy *= -1;
-                
+
                 if (Math.random() > 0.995) this.active = !this.active;
             }
         }
@@ -3074,7 +3323,7 @@
                     const dx = p1.screenX - p2.screenX;
                     const dy = p1.screenY - p2.screenY;
                     const distance = Math.sqrt(dx * dx + dy * dy);
-                    
+
                     if (distance < 100) {
                         particlesCtx.strokeStyle = `rgba(245, 158, 11, ${0.15 * (1 - distance / 100)})`;
                         particlesCtx.lineWidth = 1;
@@ -3093,7 +3342,7 @@
                     const dx = n1.x - n2.x;
                     const dy = n1.y - n2.y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
-                    
+
                     if (distance < 150) {
                         const opacity = (1 - distance / 150) * (n1.active || n2.active ? 0.4 : 0.1);
                         neuralCtx.strokeStyle = `rgba(0, 255, 136, ${opacity})`;
@@ -3108,14 +3357,14 @@
 
             neuralNodes.forEach(node => {
                 const pulse = Math.sin(node.pulsePhase) * 0.3 + 0.7;
-                
+
                 const gradient = neuralCtx.createRadialGradient(
                     node.x, node.y, 0,
                     node.x, node.y, node.radius * pulse * 3
                 );
                 gradient.addColorStop(0, node.active ? 'rgba(0, 255, 136, 0.8)' : 'rgba(0, 170, 255, 0.5)');
                 gradient.addColorStop(1, 'rgba(0, 255, 136, 0)');
-                
+
                 neuralCtx.fillStyle = gradient;
                 neuralCtx.beginPath();
                 neuralCtx.arc(node.x, node.y, node.radius * pulse * 3, 0, Math.PI * 2);
@@ -3142,15 +3391,15 @@
             "MLOps Engineer",
             "Graduate Researcher"
         ];
-        
+
         let titleIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
         const typewriterEl = document.getElementById('typewriter');
-        
+
         function typeWriter() {
             const currentTitle = titles[titleIndex];
-            
+
             if (isDeleting) {
                 typewriterEl.textContent = currentTitle.substring(0, charIndex - 1);
                 charIndex--;
@@ -3158,9 +3407,9 @@
                 typewriterEl.textContent = currentTitle.substring(0, charIndex + 1);
                 charIndex++;
             }
-            
+
             let typeSpeed = isDeleting ? 50 : 100;
-            
+
             if (!isDeleting && charIndex === currentTitle.length) {
                 typeSpeed = 2000;
                 isDeleting = true;
@@ -3169,10 +3418,10 @@
                 titleIndex = (titleIndex + 1) % titles.length;
                 typeSpeed = 500;
             }
-            
+
             setTimeout(typeWriter, typeSpeed);
         }
-        
+
         typeWriter();
 
         // Scroll animations
@@ -3199,7 +3448,7 @@
         // Mobile menu
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
-        
+
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             mobileMenu.classList.toggle('active');
@@ -3214,7 +3463,7 @@
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
@@ -3229,4 +3478,5 @@
         //
     </script>
 </body>
+
 </html>
